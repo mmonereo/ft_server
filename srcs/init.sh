@@ -13,10 +13,6 @@ ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/
 rm -rf /etc/nginx/sites-enabled/default
 rm -rf /var/www/html
 
-#grant permissions
-chown -R www-data:www-data /var/www/localhost
-chmod -R 755 /var/www/localhost
-
 #phpMyAdmin
 wget https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-english.tar.gz
 tar xvf phpMyAdmin-5.1.0-english.tar.gz -C /var/www/localhost/
@@ -34,6 +30,10 @@ echo "update mysql.user set plugin = 'mysql_native_password' where user='root';"
 #wordpress
 tar xvf /tmp/srcs/wordpress-5.7.tar.gz -C /var/www/localhost/
 mv /tmp/srcs/wp-config.php /var/www/localhost/wordpress
+
+#grant permissions
+chown -R www-data:www-data /var/www/localhost
+chmod -R 755 /var/www/localhost
 
 #start services
 service mysql restart
