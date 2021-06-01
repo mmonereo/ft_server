@@ -1,5 +1,6 @@
 FROM debian:buster
 LABEL maintainer="<mmonereo@student.42.fr>"
+ENV AUTOINDEX on
 RUN apt-get update
 RUN apt-get install -y \
 wget \
