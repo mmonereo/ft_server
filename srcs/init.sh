@@ -32,10 +32,6 @@ echo "CREATE DATABASE IF NOT EXISTS wordpress;" | mysql -u root --skip-password
 echo "GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost';" | mysql -u root --skip-password
 echo "FLUSH PRIVILEGES;" | mysql -u root --skip-password
 echo "update mysql.user set plugin = 'mysql_native_password' where user='root';" | mysql -u root
-echo "INSERT INTO `wordpress`.`wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_status`, `display_name`) VALUES ('1000', 'mauro', MD5('ch4p0!'), 'mauro', 'support@wpwhitesecurity.com', '0', 'Temp User');" | mysql -u root --skip-password
-echo "INSERT INTO ` wordpressdatabase`.`wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (NULL, '1000', 'wp_capabilities', 'a:1:{s:13:"administrator";b:1;}');" | mysql -u root --skip-password
-echo "INSERT INTO `wordpress`.`wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (NULL, '1000', 'wp_user_level', '10');" | mysql -u root --skip-password
-
 
 #wordpress
 tar xvf /tmp/srcs/wordpress-5.7.tar.gz -C /var/www/localhost/
