@@ -18,7 +18,7 @@ This is automated thanks to a dockerfile and a sh script:
 
 - Dockerfile is responsible of creating the container with the Debian Buster image as the base image. It will also copy a few config files and the Wordpress files into the container from the src folder. Finally it will execute the init.sh script.
 
-- The script will handle creation of the SSL certificate , configuration for Nginx and the services. It will also grant needed permissions and start all the services.  
+- The script will handle creation of the SSL certificate as well as configuration for Nginx and the services. It will also grant needed permissions and start all the services.  
 
 
 
